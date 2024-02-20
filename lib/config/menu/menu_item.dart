@@ -18,13 +18,13 @@ const appMenuItems = <MenuItem>[
   MenuItem(
     title: 'Buttons',
     subTitle: 'Flutter buttons',
-    route: '/butons',
+    route: '/buttons',
     icon: Icons.radio_button_checked,
   ),
   MenuItem(
     title: 'Cards',
     subTitle: 'Some Flutter cards',
-    route: '/card',
+    route: '/cards',
     icon: Icons.credit_card,
   ),
 ];
