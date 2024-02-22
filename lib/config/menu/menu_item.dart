@@ -51,4 +51,10 @@ const appMenuItems = <MenuItem>[
     route: '/ui-controls',
     icon: Icons.cake_rounded,
   ),
+  MenuItem(
+    title: 'App Tutorial',
+    subTitle: 'Tutorial',
+    route: '/app-tutorial',
+    icon: Icons.school,
+  ),
 ];
