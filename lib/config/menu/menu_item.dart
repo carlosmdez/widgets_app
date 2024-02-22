@@ -57,4 +57,10 @@ const appMenuItems = <MenuItem>[
     route: '/app-tutorial',
     icon: Icons.school,
   ),
+  MenuItem(
+    title: 'Infinite Scroll',
+    subTitle: 'Example',
+    route: '/infinite-scroll',
+    icon: Icons.downloading_outlined,
+  ),
 ];
