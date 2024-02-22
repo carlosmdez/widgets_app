@@ -45,4 +45,10 @@ const appMenuItems = <MenuItem>[
     route: '/animated',
     icon: Icons.animation,
   ),
+  MenuItem(
+    title: 'UI Controls + Titles',
+    subTitle: 'Algo bonito',
+    route: '/ui-controls',
+    icon: Icons.cake_rounded,
+  ),
 ];
