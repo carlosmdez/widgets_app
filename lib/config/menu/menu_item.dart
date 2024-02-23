@@ -22,6 +22,12 @@ const appMenuItems = <MenuItem>[
     icon: Icons.calculate,
   ),
   MenuItem(
+    title: 'Themes',
+    subTitle: 'Theme Changer',
+    route: '/theme-changer',
+    icon: Icons.color_lens,
+  ),
+  MenuItem(
     title: 'Buttons',
     subTitle: 'Flutter buttons',
     route: '/buttons',
