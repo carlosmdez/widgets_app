@@ -58,6 +58,12 @@ final GoRouter appRouter = GoRouter(
             return const UIControlsScreen();
           },
         ),
+        GoRoute(
+          path: 'counter',
+          builder: (context, GoRouterState state) {
+            return const CounterScreen();
+          },
+        ),
       ],
     ),
   ],

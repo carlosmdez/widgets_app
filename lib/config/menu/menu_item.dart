@@ -16,6 +16,12 @@ class MenuItem {
 
 const appMenuItems = <MenuItem>[
   MenuItem(
+    title: 'Counter',
+    subTitle: 'State management',
+    route: '/counter',
+    icon: Icons.calculate,
+  ),
+  MenuItem(
     title: 'Buttons',
     subTitle: 'Flutter buttons',
     route: '/buttons',
