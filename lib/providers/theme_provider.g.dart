@@ -21,37 +21,21 @@ final paletteColorsProvider = AutoDisposeProvider<List<Color>>.internal(
 );
 
 typedef PaletteColorsRef = AutoDisposeProviderRef<List<Color>>;
-String _$isDarkModeHash() => r'4acb52b43930d1ee592c6400fa71eab63f1e71d5';
+String _$themeControllerHash() => r'7c59f51261a5c3246aa520e5f8b7b5de130dda77';
 
-/// See also [IsDarkMode].
-@ProviderFor(IsDarkMode)
-final isDarkModeProvider =
-    AutoDisposeNotifierProvider<IsDarkMode, bool>.internal(
-  IsDarkMode.new,
-  name: r'isDarkModeProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$isDarkModeHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef _$IsDarkMode = AutoDisposeNotifier<bool>;
-String _$colorIndexSelectedHash() =>
-    r'02af4e8a194d98c63b8e1ba6a8a1b525c2ec63ea';
-
-/// See also [ColorIndexSelected].
-@ProviderFor(ColorIndexSelected)
-final colorIndexSelectedProvider =
-    AutoDisposeNotifierProvider<ColorIndexSelected, int>.internal(
-  ColorIndexSelected.new,
-  name: r'colorIndexSelectedProvider',
+/// See also [ThemeController].
+@ProviderFor(ThemeController)
+final themeControllerProvider =
+    AutoDisposeNotifierProvider<ThemeController, AppTheme>.internal(
+  ThemeController.new,
+  name: r'themeControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$colorIndexSelectedHash,
+      : _$themeControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ColorIndexSelected = AutoDisposeNotifier<int>;
+typedef _$ThemeController = AutoDisposeNotifier<AppTheme>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

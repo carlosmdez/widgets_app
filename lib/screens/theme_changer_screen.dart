@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:widgets_app/config/theme/app_theme.dart';
 import 'package:widgets_app/providers/theme_provider.dart';
 
 class ThemeChangerScreen extends HookConsumerWidget {
@@ -7,16 +8,18 @@ class ThemeChangerScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final bool isDarkMode = ref.watch(isDarkModeProvider);
+    AppTheme themeController = ref.watch(themeControllerProvider);
 
     return Scaffold(
         appBar: AppBar(
           title: const Text('Change App Theme'),
           actions: [
             IconButton(
-              icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
+              icon: Icon(themeController.isDarkMode
+                  ? Icons.light_mode
+                  : Icons.dark_mode),
               onPressed: () {
-                ref.read(isDarkModeProvider.notifier).toggleTheme();
+                ref.read(themeControllerProvider.notifier).toggleDarkMode();
               },
             ),
           ],
@@ -29,7 +32,7 @@ class _ThemeChangerView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colors = ref.watch(paletteColorsProvider);
-    int colorIndex = ref.watch(colorIndexSelectedProvider);
+    AppTheme themeController = ref.watch(themeControllerProvider);
 
     return ListView.builder(
       itemCount: colors.length,
@@ -40,12 +43,12 @@ class _ThemeChangerView extends HookConsumerWidget {
           subtitle: Text('${color.value}'),
           activeColor: color,
           value: index,
-          groupValue: colorIndex,
+          groupValue: themeController.selectedColor,
           onChanged: (value) {
             final currentVal = value ?? 0;
             ref
-                .read(colorIndexSelectedProvider.notifier)
-                .selectColor(currentVal);
+                .read(themeControllerProvider.notifier)
+                .changeColorIndex(currentVal);
           },
         );
       },
